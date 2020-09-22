@@ -20,7 +20,12 @@ public class Pista {
 			carro.start();
 		}
 		
-		res.resultado();
+		String[] resultadoFinal = res.resultado();
+		
+		System.out.println("*********** RESULTADO ***********");
+		for(int i=0; i<resultadoFinal.length; i++) {			
+			System.out.println(resultadoFinal[i]);
+		}
 		
 	}
 

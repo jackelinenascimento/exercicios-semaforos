@@ -36,7 +36,7 @@ public class ThreadCarro extends Thread{
 		
 		int melhorTempo = 0;
 		
-		System.out.println("Carro " + idCarro + " da Equipe " + equipe + "na pista");
+		System.out.println("Carro " + idCarro + " da Equipe " + equipe + " entrou na pista");
 		
 		for(int voltas=1; voltas<4; voltas++) {
 			
@@ -62,9 +62,17 @@ public class ThreadCarro extends Thread{
 		posCarro++;
 	}
 	
-	public static void resultado() {
+	public static String[] resultado() {
+		
+		try {
+			sleep(1000);			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		int auxiliar;
+		String[] resposta = new String[14];
 		
 		for(int i=0; i<14; i++) {
 			for(int j=0; j<14; j++) {
@@ -83,11 +91,12 @@ public class ThreadCarro extends Thread{
 				}
 			}
 		}
-		System.out.println("************* RESULTADO ****************");
+		
 		for(int i=0; i<14; i++) {			
-			System.out.println((i+1) + "º lugar: Carro: " + competidores[i] + " - Equipe: " + equipes[i]);
+			resposta[i] = (i+1) + "º lugar: Carro: " + competidores[i] + " - Equipe: " + equipes[i];
 		}
 		
+		return resposta;
 	}
 }
 
